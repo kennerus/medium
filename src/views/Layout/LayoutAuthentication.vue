@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BNavbar :shadow="true">
+    <BNavbar :shadow="true" class="is-info">
       <template slot="start">
         <BNavbarItem tag="router-link" to="/">
           Home

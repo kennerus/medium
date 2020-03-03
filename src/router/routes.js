@@ -1,9 +1,17 @@
 export default [
-
   {
     path: '/',
-    name: 'home',
-    redirect: '/login',
+    component: () => {
+      const isLogined = true ? 'LayoutAuthentication' : 'LayoutLogined';
+      return import(`../views/Layout/${isLogined}`);
+    },
+    children: [
+      {
+        path: '/',
+        name: 'posts',
+        component: () => import('../views/Posts/Posts'),
+      }
+    ]
   },
   {
     path: '/',
@@ -22,7 +30,24 @@ export default [
     ]
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/',
+    component: () => import('../views/Layout/LayoutLogined'),
+    children: [
+      {
+        path: '/posts/create',
+        name: 'postCreate',
+        // component: () => import(''),
+      },
+      {
+        path: '/posts/edit/:id',
+        name: 'postEdit',
+        // component: () => import(''),
+      },
+      {
+        path: '/posts/:id',
+        name: 'post',
+        // component: () => import(''),
+      },
+    ]
   }
 ]
