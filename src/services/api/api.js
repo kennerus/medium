@@ -1,7 +1,7 @@
 import axios from 'axios';
-axios.defaults.headers = {'Content-Type': 'application/json'};
-axios.defaults.withCredentials = true;
-axios.defaults.maxContentLength = 0;
+// axios.defaults.headers = {'Content-Type': 'application/json'};
+// axios.defaults.withCredentials = true;
+// axios.defaults.maxContentLength = 0;
 
 export default {
   get: (url, params) => axios.get(url, params),

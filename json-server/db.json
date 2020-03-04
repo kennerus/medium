@@ -1,30 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
       "email": "writer@mail.com",
-      "password": 123456,
+      "password": "$2a$10$srkqXETXC7dogVvPi0EEtunUCWrgIx/SoBnDIZ72GbJflN7jrRzZ",
+      "id": 1,
       "role": "writer"
     },
     {
       "id": 2,
       "email": "reader@mail.com",
-      "password": 123456,
+      "password": "000000",
       "role": "reader"
-    }
-  ],
-  "login": [
-    {
-      "id": 1,
-      "email": "writer@mail.com",
-      "password": 123456,
-      "role": "writer"
     },
     {
-      "id": 2,
-      "email": "reader@mail.com",
-      "password": 123456,
-      "role": "reader"
+      "email": "test@test.ru",
+      "password": "$2a$10$QKP2F26R5xE9sPC6mhyQneigL2TINtlXPE65dOxMTln95fzBqZNjq",
+      "role": "writer",
+      "id": 3
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$srkqXETXC7dogVvPi0EEtunUCWrgIx/SoBnDIZ72GbJflN7jrRzZu",
+      "role": "writer",
+      "id": 4
     }
   ],
   "posts": [
