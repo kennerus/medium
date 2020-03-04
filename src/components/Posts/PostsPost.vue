@@ -68,14 +68,14 @@
           description: 'Текст',
           claps: 0,
           createdAt: '2019-09-29T00:00:00.00Z',
-          updatedAt: '2019-09-29T00:00:00.00Z',
+          updateAt: '2019-09-29T00:00:00.00Z',
           userId: 1
         })
       },
     },
     methods: {
       postCreatedAt() {
-        const daysDifference = this.$_datesDifference(this.post.updatedAt);
+        const daysDifference = this.$_datesDifference(this.post.updateAt);
         const declension = this.$_declension(daysDifference, this.dateDeclension);
 
         return `${daysDifference} ${declension} назад`;

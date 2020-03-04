@@ -2,7 +2,7 @@
   <section class="hero is-fullheight-with-navbar is-light">
     <div class="hero-body">
       <div class="container ">
-        <form @submit.prevent>
+        <form @submit.prevent="loginUser">
           <h2 class="title is-2">Авторизуйтесь</h2>
 
           <BField label="Email"
@@ -50,6 +50,7 @@
   import BField from 'buefy/src/components/field/Field';
   import BInput from 'buefy/src/components/input/Input';
   import BButton from 'buefy/src/components/button/Button';
+  import api from "../../services/api";
 
   export default {
     name: 'Login',
@@ -60,40 +61,31 @@
       },
     },
     data() {
+      const {users: apiUsers} = api;
       return {
+        apiUsers,
         login: '',
         password: ''
       }
     },
     methods: {
-      login() {
+      loginUser() {
         let message = 'Заполните поля логина и пароля!';
         let type = 'is-danger';
 
         if (this.isFormValid) {
           message = 'Вы успешно авторизованы!';
           type = 'is-success';
-          this.$router.push('/');
+          // this.$router.push('/');
         }
-        this.$buefy.toast.open({
-          message,
-          type
-        });
 
-        const users = [
-          {
-            id: 1,
-            login: 'writer@mail.com',
-            password: 123456,
-            role: 'writer',
-          },
-          {
-            id: 1,
-            login: 'reader@mail.com',
-            password: 123456,
-            role: 'reader',
-          },
-        ]
+        this.apiUsers.authorization({email: this.login, password: this.password})
+          .then(console.log)
+          .catch(console.log)
+        // this.$buefy.toast.open({
+        //   message,
+        //   type
+        // });
       }
     }
   }

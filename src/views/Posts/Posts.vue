@@ -3,7 +3,7 @@
     <div class="container">
       <div class="columns" v-for="post in posts"
            :key="post.id">
-        <PostsPost :post="post" />
+        <PostsPost :post="post"/>
       </div>
     </div>
   </section>
@@ -11,41 +11,27 @@
 
 <script>
   import PostsPost from '../../components/Posts/PostsPost';
+  import api from "../../services/api";
 
   export default {
     name: 'Posts',
     components: {PostsPost},
+    created() {
+      this.apiPosts.getPosts()
+        .then(this.getPostsHandler)
+        .catch(console.log)
+    },
     data() {
+      const {posts: apiPosts} = api;
+
       return {
-        posts: [
-          {
-            id: 1,
-            title: 'Название поста',
-            description: 'Текст',
-            claps: 0,
-            createdAt: '2019-09-29T00:00:00.00Z',
-            updatedAt: '2019-09-29T00:00:00.00Z',
-            userId: 1
-          },
-          {
-            id: 1,
-            title: 'Название поста',
-            description: 'Текст',
-            claps: 0,
-            createdAt: '2019-09-29T00:00:00.00Z',
-            updatedAt: '2019-09-29T00:00:00.00Z',
-            userId: 1
-          },
-          {
-            id: 1,
-            title: 'Название поста',
-            description: 'Текст',
-            claps: 0,
-            createdAt: '2019-09-29T00:00:00.00Z',
-            updatedAt: '2019-09-29T00:00:00.00Z',
-            userId: 1
-          },
-        ]
+        apiPosts,
+        posts: []
+      }
+    },
+    methods: {
+      getPostsHandler(response) {
+        this.posts = response.data;
       }
     }
   }
