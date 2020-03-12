@@ -2,7 +2,7 @@
   <section class="hero is-fullheight-with-navbar is-light">
     <div class="hero-body">
       <div class="container ">
-        <form @submit.prevent="loginUser">
+        <form @submit.prevent="registerUser">
           <h2 class="title is-2">Авторизуйтесь</h2>
 
           <BField label="Email"
@@ -35,10 +35,26 @@
             </BInput>
           </BField>
 
+          <div>
+            <BRadio v-model="role"
+                    name="role"
+                    native-value="reader"
+            >
+              Читатель
+            </BRadio>
+
+            <BRadio v-model="role"
+                    name="role"
+                    native-value="writer"
+            >
+              Писатель
+            </BRadio>
+          </div>
+
           <BButton native-type="submit"
                    :disabled="isFormValid === false"
           >
-            Войти
+            Зарегистрироваться
           </BButton>
         </form>
       </div>
@@ -47,62 +63,61 @@
 </template>
 
 <script>
-  import BField from 'buefy/src/components/field/Field';
-  import BInput from 'buefy/src/components/input/Input';
-  import BButton from 'buefy/src/components/button/Button';
   import api from "../../services/api";
   import MixinErrorHandler from '../../mixins/Common/MixinErrorHandler';
 
   export default {
-    name: 'Login',
-    components: {BButton, BInput, BField},
+    name: 'SignUp',
     mixins: [MixinErrorHandler],
     computed: {
       isFormValid() {
-        return Boolean(this.email && this.password);
+        return Boolean(this.email && this.password && this.role);
       },
     },
     data() {
-      const {login: apiLogin} = api.authentication;
+      const {register: apiRegister} = api.authentication;
 
       return {
-        apiLogin,
+        apiRegister,
         email: '',
-        password: ''
+        password: '',
+        role: 'reader',
       }
     },
-    methods: {
-      loginUser() {
-        if (this.isFormValid) {
-          const {email, password} = this;
 
-          this.apiLogin({email, password})
-            .then(this.loginUserHandler)
-            .catch(this.$_errorHandler);
+    methods: {
+      registerUser() {
+        if (this.isFormValid) {
+          const {email, password, role} = this;
+
+          this.apiRegister({email, password, role})
+            .then(this.registerUserHandler)
+            .catch(this.$_errorHandler)
         } else {
           this.$_showToast(this.formToast());
         }
       },
 
-      loginUserHandler(response) {
+      registerUserHandler(response) {
         this.$_showToast(this.formToast());
         this.$router.push('/');
       },
 
+
       formToast() {
-        let message = 'Заполните поля логина и пароля!';
+        let message = 'Заполните все поля!';
         let type = 'is-danger';
 
         if (this.isFormValid) {
-          message = 'Вы успешно авторизованы!';
+          message = 'Вы успешно зарегистрировались!';
           type = 'is-success';
         }
 
         return {
           message, type
         }
-      },
-    },
+      }
+    }
   }
 </script>
 

@@ -1,4 +1,4 @@
-<template>
+<template :key="$store.getters.isAuthenticated)">
   <div>
     <BNavbar :shadow="true" class="is-info">
       <template slot="start">
@@ -29,18 +29,23 @@
 <script>
   import BNavbarItem from 'buefy/src/components/navbar/NavbarItem';
   import BNavbar from 'buefy/src/components/navbar/Navbar';
+  import MixinToast from '../../mixins/Common/MixinToast';
 
   export default {
     name: 'LayoutLogined',
     components: {BNavbar, BNavbarItem},
+    mixins: [MixinToast],
     methods: {
       logout() {
-        this.$buefy.toast.open({
+        this.$store.dispatch('AUTH_LOGOUT');
+
+        this.$_showToast({
           message: 'Вы вышли из системы',
           type: 'is-success',
         });
-        this.$router.push('/');
-      }
+
+        this.$router.push({name: 'login'});
+      },
     }
   }
 </script>

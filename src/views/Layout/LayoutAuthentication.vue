@@ -1,4 +1,4 @@
-<template>
+<template :key="$store.getters.isAuthenticated">
   <div>
     <BNavbar :shadow="true" class="is-info">
       <template slot="start">

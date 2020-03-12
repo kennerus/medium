@@ -1,10 +1,27 @@
+import store from '../store';
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (store.getters.isAuthenticated === false) {
+    next();
+  } else {
+    next('/');
+  }
+};
+
+const ifAuthenticated = (to, from, next) => {
+  if (store.getters.isAuthenticated) {
+    next();
+  } else {
+    next('/login');
+  }
+};
+
+const layout = store.getters.isAuthenticated ? 'LayoutLogined' : 'LayoutAuthentication';
+
 export default [
   {
     path: '/',
-    component: () => {
-      const isLogined = true ? 'LayoutAuthentication' : 'LayoutLogined';
-      return import(`../views/Layout/${isLogined}`);
-    },
+    component: () => import(`../views/Layout/${layout}`),
     children: [
       {
         path: '/',
@@ -16,6 +33,7 @@ export default [
   {
     path: '/',
     component: () => import('../views/Layout/LayoutAuthentication'),
+    beforeEnter: ifNotAuthenticated,
     children: [
       {
         path: '/login',
@@ -25,13 +43,14 @@ export default [
       {
         path: '/sign-up',
         name: 'signUp',
-        component: () => import('../views/Authentication/Login'),
+        component: () => import('../views/Authentication/SignUp'),
       },
     ]
   },
   {
     path: '/',
     component: () => import('../views/Layout/LayoutLogined'),
+    beforeEnter: ifAuthenticated,
     children: [
       {
         path: '/posts/create',
