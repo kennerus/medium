@@ -2,6 +2,9 @@ import api from './api';
 import axios from 'axios';
 import store from '../../store';
 
+// т.к. тут запросы идут не к реальному серверу, а эмуляции и я не могу получить текущего авторизованного пользователя
+// решил при регистрации/авторизации записывать его мейл в стор, чтобы можно было получить данные при перезагрузке страницы
+
 const successCallback = (response, resolve) => {
   const {accessToken} = response.data;
   store.dispatch('AUTH_SUCCESS', accessToken);
@@ -13,6 +16,7 @@ const successCallback = (response, resolve) => {
 const catchCallback = (error, reject) => {
   store.dispatch('AUTH_LOGOUT', '');
   localStorage.removeItem('user-token');// if the request fails, remove any possible user token if possible
+  localStorage.removeItem('user-email');
   reject(error);
 };
 
@@ -26,6 +30,8 @@ export default {
    * @return {Object} - token
    */
   login: loginData => new Promise((resolve, reject) => {
+    localStorage.setItem('user-email', loginData.email);
+
     api.post('/api/login', loginData)
       .then(response => successCallback(response, resolve))
       .catch(error => catchCallback(error, reject));
@@ -41,6 +47,8 @@ export default {
    * @return {Object} - token
    */
   register: user => new Promise((resolve, reject) => {
+    localStorage.setItem('user-email', user.email);
+
     api.post('/api/register', user)
       .then(response => successCallback(response, resolve))
       .catch(error => catchCallback(error, reject));

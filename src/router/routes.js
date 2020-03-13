@@ -1,20 +1,5 @@
 import store from '../store';
-
-const ifNotAuthenticated = (to, from, next) => {
-  if (store.getters.isAuthenticated === false) {
-    next();
-  } else {
-    next('/');
-  }
-};
-
-const ifAuthenticated = (to, from, next) => {
-  if (store.getters.isAuthenticated) {
-    next();
-  } else {
-    next('/login');
-  }
-};
+import {ifAuthenticated, ifNotAuthenticated, roleGuard, firstEnter} from './helpers';
 
 const layout = store.getters.isAuthenticated ? 'LayoutLogined' : 'LayoutAuthentication';
 
@@ -22,6 +7,7 @@ export default [
   {
     path: '/',
     component: () => import(`../views/Layout/${layout}`),
+    beforeEnter: firstEnter,
     children: [
       {
         path: '/',
@@ -55,17 +41,29 @@ export default [
       {
         path: '/posts/create',
         name: 'postCreate',
-        // component: () => import(''),
+        meta: {
+          roles: ['writer'],
+        },
+        component: () => import('../views/Posts/PostCreate'),
+        beforeEnter: roleGuard
       },
       {
         path: '/posts/edit/:id',
         name: 'postEdit',
-        // component: () => import(''),
+        meta: {
+          roles: ['writer'],
+        },
+        component: () => import('../views/Posts/PostEdit'),
+        beforeEnter: roleGuard
       },
       {
         path: '/posts/:id',
         name: 'post',
-        // component: () => import(''),
+        meta: {
+          roles: ['writer'],
+        },
+        component: () => import('../views/Posts/Post'),
+        beforeEnter:roleGuard
       },
     ]
   }

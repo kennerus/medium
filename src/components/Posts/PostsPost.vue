@@ -3,7 +3,7 @@
     <div class="card">
       <header class="card-header">
         <h2 class="card-header-title">
-          <router-link :to="`/${post.id}`"
+          <router-link :to="`/posts/${post.id}`"
                        class="card-header-title is-4"
           >
             {{post.title}}
@@ -12,37 +12,51 @@
       </header>
 
       <div class="card-content">
-        <router-link :to="`/${post.id}`" class="subtitle is-6">
-          {{post.description}}
-        </router-link>
+        <router-link :to="`/posts/${post.id}`"
+                     class="subtitle is-6"
+                     v-html="post.description"
+        ></router-link>
       </div>
 
       <footer class="card-footer level">
         <span class="level-left">{{postCreatedAt()}}</span>
 
         <div class="level-right">
-          <BButton type="is-light" class="level-item">
+          <BButton type="is-light"
+                   class="level-item"
+                   v-if="canClap"
+
+                   @click="clapToPost"
+          >
             <BIcon pack="fas"
-                   icon="sign-language"
+                   icon="thumbs-up"
                    type="is-info"
             />
+            <span>{{post.claps}}</span>
           </BButton>
 
-          <BButton type="is-light" class="level-item">
-            <BIcon pack="fas"
-                   icon="edit"
-                   type="is-info"
-            />
-            <span>Изменить</span>
-          </BButton>
+          <template v-if="canChangePost">
+            <router-link class="button is-light level-item"
+                         :to="`/posts/edit/${post.id}`"
+            >
+              <BIcon pack="fas"
+                     icon="edit"
+                     type="is-info"
+              />
+              <span>Изменить</span>
+            </router-link>
 
-          <BButton type="is-light" class="level-item">
-            <BIcon pack="fas"
-                   icon="trash-alt"
-                   type="is-info"
-            />
-            <span>Удалить</span>
-          </BButton>
+            <BButton class="button is-light level-item"
+
+                     @click="removePost"
+            >
+              <BIcon pack="fas"
+                     icon="trash-alt"
+                     type="is-info"
+              />
+              <span>Удалить</span>
+            </BButton>
+          </template>
         </div>
       </footer>
     </div>
@@ -54,6 +68,7 @@
   import BIcon from 'buefy/src/components/icon/Icon';
   import MixinDate from '../../mixins/Common/MixinDate';
   import MixinDeclensions from '../../mixins/Common/MixinDeclensions';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'PostsPost',
@@ -73,14 +88,36 @@
         })
       },
     },
+    computed: {
+      ...mapGetters(['user']),
+
+      canChangePost() {
+        return this.user.role === 'writer' && this.user.id === this.post.userId;
+      },
+
+      canClap() {
+        return this.user.role === 'reader';
+      }
+    },
     methods: {
       postCreatedAt() {
-        const daysDifference = this.$_datesDifference(this.post.updateAt);
-        const declension = this.$_declension(daysDifference, this.dateDeclension);
+        const {difference, declension: currentDeclension} = this.$_datesDifference(this.post.updateAt);
+        const declension = this.$_declension(difference, currentDeclension);
 
-        return `${daysDifference} ${declension} назад`;
-      }
-    }
+        return `${difference} ${declension} назад`;
+      },
+
+      removePost() {
+        this.$buefy.dialog.confirm({
+          message: 'Подтвердите удаление статьи',
+          onConfirm: () => this.$emit('click', this.post),
+        });
+      },
+
+      clapToPost() {
+        this.$emit('clap', this.post);
+      },
+    },
   }
 </script>
 

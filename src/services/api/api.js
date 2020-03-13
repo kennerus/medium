@@ -24,4 +24,5 @@ export default {
   post: (url, params, config) => axios.post(url, params, config),
   delete: (url) => axios.delete(url),
   put: (url, params) => axios.put(url, params),
+  patch: (url, params) => axios.put(url, params),
 }

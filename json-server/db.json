@@ -11,6 +11,18 @@
       "password": "$2a$10$eXpQpIhlMBqgpmuvNQ9oUOd1Yk3dhGNuFIOHEWfpF05cAzs3PC63S",
       "role": "writer",
       "id": 2
+    },
+    {
+      "email": "a-lx1@yandex.ru",
+      "password": "$2a$10$Pn2fjdYf2zpzaysORT251uYHWgEHiV0lUB63GOrtq5W7gX05zhgSK",
+      "role": "reader",
+      "id": 3
+    },
+    {
+      "email": "a.belaya@sarm.pro",
+      "password": "$2a$10$BipJ5ZrP3o0SuFXFv5H2juhEpCGGkgeyQOd.ZVqWWrzQ1MPamXWlO",
+      "role": "reader",
+      "id": 4
     }
   ],
   "posts": [
@@ -22,6 +34,132 @@
       "createdAt": "2019-09-29T00:00:00.000Z",
       "updateAt": "2019-09-29T00:00:00.000Z",
       "userId": 1
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 7,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 3
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 4
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 5
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 3,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 6
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 7
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 8
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 9
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 10
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 11
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 12
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 13
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 14
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 15
+    },
+    {
+      "title": "Вычитал. Хочу. Делайте.",
+      "description": "<p>Вычитал. Хочу. Делайте.</p><p><br></p><p>«В честь пятницы, 13, предлагаю устроить шабаш и вспомнить, какую дурь иногда придумывают руководители для нас, любимых, чтобы работа приносила нам не только деньги, но и кучу радости»: <a href=\"https://vk.com/away.php?to=http%3A%2F%2Famp.gs%2F08vk&amp;post=-20629724_1282319&amp;cc_key=\" rel=\"noopener noreferrer\" target=\"_blank\">http://amp.gs/08vk</a></p>",
+      "claps": 2,
+      "userId": 2,
+      "createdAt": "2020-03-13T18:31:55.311Z",
+      "updateAt": "2020-03-13T18:31:55.311Z",
+      "id": 16
     }
   ]
 }
