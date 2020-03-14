@@ -27,6 +27,8 @@ json-server ./json-server/db.json -m ./node_modules/json-server-auth -r ./json-s
 json-server-auth ./json-server/db.json -r ./json-server/routes.json
 ```
 
+### Пароли созданных уже пользователей 123456
+
 ### Compiles and minifies for production
 ```
 npm run build
